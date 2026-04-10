@@ -1,6 +1,8 @@
 package org.example.reflection;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class PocReflection {
 
@@ -31,7 +33,7 @@ public class PocReflection {
         Method fazerAniversario = clazz.getDeclaredMethod("fazerAniversario");
         fazerAniversario.invoke(pessoa);
 
-         Method metodoPrivado = clazz.getDeclaredMethod("metodoPrivado", String.class);
+        Method metodoPrivado = clazz.getDeclaredMethod("metodoPrivado", String.class);
         metodoPrivado.setAccessible(true);
         metodoPrivado.invoke(pessoa, "Reflection!");
 
